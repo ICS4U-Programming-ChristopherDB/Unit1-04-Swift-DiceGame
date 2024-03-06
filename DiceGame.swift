@@ -7,10 +7,9 @@
 //
 //  Guess the correct dice value to win!
 
-
 func main() {
     // Generates a random number from 1-6.
-    let randomNum: Int = Int.random(in:1..<7)
+    let randomNum: Int = Int.random(in: 1..<7)
     // Initializes the number of guesses.
     var guesses: Int = 0
     // Loop repeats until the user guesses correctly.
@@ -24,23 +23,19 @@ func main() {
             if userGuess >= 1 && userGuess <= 6 {
                 if userGuess < randomNum {
                     print("Too small!")
-                }
-                else if userGuess > randomNum {
+                } else if userGuess > randomNum {
                     print("Too large!")
-                }
                 // If the user guessed correctly.
-                else {
+                } else {
                     break
                 }
-            }
             // If the user entered a number beyond 1-6.
-            else {
+            } else {
                 print("You must enter a number from (1-6)")
                 guesses -= 1
             }
-        }
         // If the user did not enter an integer.
-        else {
+        } else {
             print("You must enter an integer!")
             guesses -= 1
         }
@@ -48,4 +43,5 @@ func main() {
     // Once the user guesses correctly, tell them how many guesses it took.
     print("Correct! It took you \(guesses) to guess correctly!")
 }
+
 main()
